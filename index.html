@@ -12,20 +12,15 @@
 
     <body>
 
-        <h1 id="autor">Autor: Pol Aran Serrano</h1>
+        <div class="container-fluid mt-4">
+            <h1 id="autor">Autor: Pol Aran Serrano</h1>
+        </div>
 
         <!-- https://vuejs.org/v2/guide/index.html -->
         <div id="app">
-            <div class="jumbotron">
-                <h1 class="display-4" id="title">{{ collection.title }}</h1>
-            </div>
             
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">{{ item.title }}</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Ver</a>
-                </div>
+            <div class="p-4 mb-5 mt-4 jumbotron" style="background-color: #cecece">
+                <h1 id="title">{{col.collection.title}}</h1>
             </div>
             <!--
                  TODO: Mostrar datos del objeto collection. Ver archivo ./js/script.js
@@ -39,10 +34,22 @@
                    - El término <dt> será la propiedad "prompt"
                    - La definición <dd> será la propiedad "value"
             -->
+
+            <div class="container row mx-auto">
+                <div v-for="movie in col.collection.items" class="col-md-4 mb-3 card">
+                    <div class="container mt-4 mb-3">
+                        <div v-for="item in movie.data">
+                            <p class="fw-bold m-0">{{item.prompt}}</p>
+                            <p>{{item.value}}</p>
+                        </div>
+    
+                        <a :href="movie.href" class="btn btn-primary w-25" target="_blank">Ver</a>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+            <script src="/js/script.js"></script>
         </div>
     </body>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="./js/script.js"></script>
-
 </html>
