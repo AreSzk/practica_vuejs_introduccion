@@ -17,13 +17,15 @@
         <!-- https://vuejs.org/v2/guide/index.html -->
         <div id="app">
             <div class="jumbotron">
-                <h1 class="display-4" id="title"></h1>
-                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                <hr class="my-4">
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                <p class="lead">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                </p>
+                <h1 class="display-4" id="title">{{ collection.title }}</h1>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.title }}</h5>
+                    <p class="card-text"></p>
+                    <a href="#" class="btn btn-primary">Ver</a>
+                </div>
             </div>
             <!--
                  TODO: Mostrar datos del objeto collection. Ver archivo ./js/script.js
